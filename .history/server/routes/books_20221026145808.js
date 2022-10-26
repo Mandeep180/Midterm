@@ -128,9 +128,7 @@ router.get('/delete/:id', (req, res, next) => {
       if(err){
         console.log(err);
         res.end(err);
-      }
-      //else
-      {
+      }else{
         res.redirect('/books')
       }
 

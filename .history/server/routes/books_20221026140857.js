@@ -34,8 +34,7 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
-     /*res.render('books/details',
+    res.render('books/details',
     {
       books:{
         "Title": null,
@@ -44,9 +43,7 @@ router.get('/add', (req, res, next) => {
         "Genre": null
       }
 
-    });*/
-
-    res.render('books/details', {title: "Add", page: 'details', books: ''});
+    });
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -128,9 +125,7 @@ router.get('/delete/:id', (req, res, next) => {
       if(err){
         console.log(err);
         res.end(err);
-      }
-      //else
-      {
+      }else{
         res.redirect('/books')
       }
 

@@ -1,12 +1,8 @@
-//Name : Mandeep Kaur, 301225713, midterm
-
-
-
 // modules required for routing
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const books = require('../models/books');
+const books = required('../models/books');
 
 // define the book model
 let book = require('../models/books');
@@ -34,8 +30,7 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
-     /*res.render('books/details',
+    res.render('books/details',
     {
       books:{
         "Title": null,
@@ -44,9 +39,7 @@ router.get('/add', (req, res, next) => {
         "Genre": null
       }
 
-    });*/
-
-    res.render('books/details', {title: "Add", page: 'details', books: ''});
+    });
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -98,23 +91,6 @@ router.post('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
 
-    let id = new mongoose.Types.ObjectId(req.params.id);
-    let bookToEdit =book({
-      "_id": id,
-      "Title": req.body.title,
-      "Price": req.body.price,
-      "Author":req.body.author,
-      "Genre": req.body.genre
-    })
-    book.updateOne({_id: id},bookToEdit,(err)=>{
-      if(err){
-        console.log(err);
-        res.end(err);
-      } else{
-        res.redirect('/books');
-      }
-    })
-
 });
 
 // GET - process the delete by user id
@@ -123,20 +99,6 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-     let id = new mongoose.Types.ObjectId(req.params.id);
-     book.remove({_id: id}, (err)=>{
-      if(err){
-        console.log(err);
-        res.end(err);
-      }
-      //else
-      {
-        res.redirect('/books')
-      }
-
-     })
-     
-    
 });
 
 

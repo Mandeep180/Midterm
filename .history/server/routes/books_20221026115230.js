@@ -1,12 +1,8 @@
-//Name : Mandeep Kaur, 301225713, midterm
-
-
-
 // modules required for routing
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const books = require('../models/books');
+const books = required('../models/books');
 
 // define the book model
 let book = require('../models/books');
@@ -34,8 +30,7 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
-     /*res.render('books/details',
+    res.render('books/details',
     {
       books:{
         "Title": null,
@@ -44,9 +39,7 @@ router.get('/add', (req, res, next) => {
         "Genre": null
       }
 
-    });*/
-
-    res.render('books/details', {title: "Add", page: 'details', books: ''});
+    });
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -128,9 +121,7 @@ router.get('/delete/:id', (req, res, next) => {
       if(err){
         console.log(err);
         res.end(err);
-      }
-      //else
-      {
+      }else{
         res.redirect('/books')
       }
 

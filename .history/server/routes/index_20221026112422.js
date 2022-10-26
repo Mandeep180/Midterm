@@ -1,4 +1,3 @@
-//Name : Mandeep Kaur, 301225713, midterm
 // modules required for routing
 let express = require('express');
 let router = express.Router();
