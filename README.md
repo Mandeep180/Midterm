@@ -7,3 +7,4 @@ use **`npm start`** to start the web app.
 
 All dependencies already pre-installed, 
 but if needed use **`npm install`** to install project dependencies
+# Midterm
